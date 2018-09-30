@@ -12,4 +12,9 @@ class Log extends Model
     {
         return $this->belongsTo(Device::class);
     }
+
+    public function loggable()
+    {
+        return $this->morphTo();
+    }
 }
