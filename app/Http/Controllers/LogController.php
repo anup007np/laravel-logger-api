@@ -25,26 +25,6 @@ class LogController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(LogStoreRequest $request)
-    {
-        $validated = $request->validated();
-
-        $log = Log::create([
-            'title' => $request->title,
-            'owner' => $request->owner,
-            'resolved' => $request->resolved,
-            'device_id' => $request->device_id
-          ]);
-    
-        return new LogResource($log);
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param Log $log 
@@ -52,19 +32,6 @@ class LogController extends Controller
      */
     public function show(Log $log)
     {
-        return new LogResource($log);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Log $log
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Log $log)
-    {
-        $log->update($request->all());
         return new LogResource($log);
     }
 

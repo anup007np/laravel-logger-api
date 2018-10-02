@@ -2,14 +2,21 @@
 
 use Faker\Generator as Faker;
 
+
+// NotesFactory.php
 $factory->define(App\Log::class, function (Faker $faker) {
+    /*$loggable = [
+        App\Incident::class,
+        App\Change::class
+    ];
+
+    $loggableType = $faker->randomElement($loggable);
+    $loggable = factory($loggableType)->create();*/
+
     return [
-        /*'user_id' => function () {
-            return factory(App\User::class)->create()->id;
-        },*/
+        'loggable_id' => 1,
+        'loggable_type' => "incidents",
         'device_id' => factory(App\Device::class)->create()->id,
-        'title' => $faker->sentence,
-        'resolved' => $faker->boolean,
         'owner' => $faker->name
     ];
 });

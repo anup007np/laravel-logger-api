@@ -16,10 +16,11 @@ class CreateLogsTable extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('owner');
+            $table->string('description');
             $table->unsignedInteger('device_id');
             $table->unsignedInteger('loggable_id');
             $table->string('loggable_type');
-            $table->string('resolved')->default(false);
+            $table->boolean('resolved')->default(false);
             $table->timestamps();
         });
     }

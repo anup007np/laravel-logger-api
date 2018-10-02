@@ -22,5 +22,12 @@ Route::get('login', ['as' => 'login', 'uses' => 'AuthController@login']);
 Route::post('login', 'AuthController@login');
 Route::post('logout', 'AuthController@logout');
 
-Route::apiResource('logs', 'LogController');
 Route::apiResource('devices', 'DeviceController');
+
+Route::get('logs', 'LogController@index');
+Route::get('logs/{log}', 'LogController@show');
+Route::delete('logs/{log}', 'LogController@destroy');
+
+Route::apiResource('incidents', 'IncidentController');
+Route::apiResource('changes', 'ChangeController');
+

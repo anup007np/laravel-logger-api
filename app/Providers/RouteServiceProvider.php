@@ -23,9 +23,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+        //Route::model('incident', App\Incident::class);
+        //Route::model('change', App\Change::class);
     }
 
     /**
