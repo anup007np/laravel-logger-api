@@ -2,9 +2,8 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Change::class, function (Faker $faker) {
     return [
-        'title' => $faker->sentence,
-        'resolved' => $faker->boolean
+        'title' => $faker->sentence
     ];
 });

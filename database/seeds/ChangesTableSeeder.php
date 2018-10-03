@@ -11,6 +11,6 @@ class ChangesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Change::class)->create();
+        factory('App\Change', 3)->create();
     }
 }
